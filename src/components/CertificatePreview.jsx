@@ -51,7 +51,8 @@ const CertificatePreview = forwardRef(({ name, templateImageSrc }, ref) => {
                 const fontSize = Math.floor(canvas.width * 0.035);
                 ctx.font = `bold ${fontSize}px 'Outfit', sans-serif`;
                 
-                const centerX = canvas.width / 2;
+                // Moved slightly to the right as requested
+                const centerX = canvas.width * 0.52;
                 // Positioned specifically for the provided Google template
                 // Moved downwards as requested
                 const centerY = canvas.height * 0.52; 
