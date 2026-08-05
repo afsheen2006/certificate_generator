@@ -51,8 +51,8 @@ const CertificatePreview = forwardRef(({ name, templateImageSrc }, ref) => {
                 const fontSize = Math.floor(canvas.width * 0.035);
                 ctx.font = `bold ${fontSize}px 'Outfit', sans-serif`;
 
-                // Center-aligned text, shifted 1.5 inches (~144px) to the right of the canvas center
-                const centerX = (canvas.width / 2) + 144;
+                // Center-aligned text, shifted 3.0 inches (~288px) to the right of the canvas center
+                const centerX = (canvas.width / 2) + 288;
                 // Keeping the vertical position as requested
                 const centerY = (canvas.height * 0.52) - 90;
 
