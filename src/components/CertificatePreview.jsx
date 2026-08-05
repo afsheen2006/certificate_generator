@@ -51,10 +51,10 @@ const CertificatePreview = forwardRef(({ name, templateImageSrc }, ref) => {
                 const fontSize = Math.floor(canvas.width * 0.035);
                 ctx.font = `bold ${fontSize}px 'Outfit', sans-serif`;
 
-                // Moved 2cm (~76 pixels at 96 DPI) to the right from center
-                const centerX = (canvas.width / 2) + 76;
-                // Moved 1 inch (~96 pixels at 96 DPI) upwards from previous base
-                const centerY = (canvas.height * 0.52) - 96;
+                // Moved 200px to the right from center
+                const centerX = (canvas.width / 2) + 400;
+                // Moved 50px upwards from previous base
+                const centerY = (canvas.height * 0.52) - 150;
 
                 ctx.fillText(name, centerX, centerY);
             }
