@@ -51,10 +51,10 @@ const CertificatePreview = forwardRef(({ name, templateImageSrc }, ref) => {
                 const fontSize = Math.floor(canvas.width * 0.035);
                 ctx.font = `bold ${fontSize}px 'Outfit', sans-serif`;
 
-                // Positioned extremely to the right corner
-                const rightX = canvas.width * 0.95; // 5% from the right edge
+                // Positioned extremely to the right corner, then 1 inch to the left
+                const rightX = (canvas.width * 0.95) - 96;
                 // Moved a little down from previous position
-                const centerY = (canvas.height * 0.52) - 120;
+                const centerY = (canvas.height * 0.52) - 90;
 
                 ctx.fillText(name, rightX, centerY);
             }
