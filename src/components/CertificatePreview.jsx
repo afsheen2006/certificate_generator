@@ -42,7 +42,7 @@ const CertificatePreview = forwardRef(({ name, templateImageSrc }, ref) => {
 
             // Draw Name
             if (name && name.trim() !== '') {
-                ctx.textAlign = 'center';
+                ctx.textAlign = 'left';
                 ctx.textBaseline = 'middle';
                 ctx.fillStyle = '#1e293b';
 
@@ -51,12 +51,12 @@ const CertificatePreview = forwardRef(({ name, templateImageSrc }, ref) => {
                 const fontSize = Math.floor(canvas.width * 0.035);
                 ctx.font = `bold ${fontSize}px 'Outfit', sans-serif`;
 
-                // Moved 200px to the right from center
-                const centerX = (canvas.width / 2) + 400;
-                // Moved 50px upwards from previous base
+                // Positioned on the left side of the certificate
+                const leftX = canvas.width * 0.15; // 15% from the left edge
+                // Keeping the vertical position adjusted by the user
                 const centerY = (canvas.height * 0.52) - 150;
 
-                ctx.fillText(name, centerX, centerY);
+                ctx.fillText(name, leftX, centerY);
             }
         };
     }, [name, templateImageSrc]);
