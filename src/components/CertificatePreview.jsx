@@ -52,7 +52,7 @@ const CertificatePreview = forwardRef(({ name, templateImageSrc }, ref) => {
                 ctx.font = `bold ${fontSize}px 'Outfit', sans-serif`;
 
                 // Positioned on the left side of the certificate
-                const leftX = canvas.width * 0.10; // 15% from the left edge
+                const leftX = canvas.width * 0.15; // 15% from the left edge
                 // Keeping the vertical position adjusted by the user
                 const centerY = (canvas.height * 0.52) - 50;
 
