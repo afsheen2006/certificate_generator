@@ -35,7 +35,7 @@ const CertificatePreview = forwardRef(({ name, templateImageSrc }, ref) => {
         img.onload = () => {
             canvas.width = img.width;
             canvas.height = img.height;
-            
+
             // Draw Background
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -44,19 +44,18 @@ const CertificatePreview = forwardRef(({ name, templateImageSrc }, ref) => {
             if (name && name.trim() !== '') {
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.fillStyle = '#1e293b'; 
-                
+                ctx.fillStyle = '#1e293b';
+
                 // Dynamic font size relative to template width
                 // Reduced font size as requested
                 const fontSize = Math.floor(canvas.width * 0.035);
                 ctx.font = `bold ${fontSize}px 'Outfit', sans-serif`;
-                
-                // Moved slightly to the right as requested
-                const centerX = canvas.width * 0.52;
-                // Positioned specifically for the provided Google template
-                // Moved downwards as requested
-                const centerY = canvas.height * 0.52; 
-                
+
+                // Moved 2cm (~76 pixels at 96 DPI) to the right from center
+                const centerX = (canvas.width / 2) + 76;
+                // Moved 1 inch (~96 pixels at 96 DPI) upwards from previous base
+                const centerY = (canvas.height * 0.52) - 96;
+
                 ctx.fillText(name, centerX, centerY);
             }
         };
