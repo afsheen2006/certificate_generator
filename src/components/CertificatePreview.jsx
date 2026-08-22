@@ -44,7 +44,7 @@ const CertificatePreview = forwardRef(({ name, templateImageSrc }, ref) => {
             if (name && name.trim() !== '') {
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.fillStyle = '#1e293b';
+                ctx.fillStyle = '#ffffff';
 
                 // Dynamic font size relative to template width
                 // Reduced font size as requested
@@ -53,8 +53,8 @@ const CertificatePreview = forwardRef(({ name, templateImageSrc }, ref) => {
 
                 // Center-aligned text, shifted 3.0 inches (~288px) to the right of the canvas center
                 const centerX = (canvas.width / 2) + 288;
-                // Keeping the vertical position as requested
-                const centerY = (canvas.height * 0.52) - 90;
+                // Shifted down by 1 inch (~96px)
+                const centerY = (canvas.height * 0.52) + 6;
 
                 ctx.fillText(name, centerX, centerY);
             }
