@@ -44,17 +44,16 @@ const CertificatePreview = forwardRef(({ name, templateImageSrc }, ref) => {
             if (name && name.trim() !== '') {
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.fillStyle = '#ffffff';
+                ctx.fillStyle = '#000000'; // Changed to black to ensure visibility
 
                 // Dynamic font size relative to template width
                 // Reduced font size as requested
                 const fontSize = Math.floor(canvas.width * 0.035);
                 ctx.font = `bold ${fontSize}px 'Outfit', sans-serif`;
 
-                // Center-aligned text, shifted further to the right (~350px)
-                const centerX = (canvas.width / 2) + 330;
-                // Shifted up by half an inch (~48px) from previous position
-                const centerY = (canvas.height * 0.52) - 42;
+                // Center-aligned text exactly in the middle
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
 
                 ctx.fillText(name, centerX, centerY);
             }
